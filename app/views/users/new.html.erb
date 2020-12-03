@@ -1,0 +1,15 @@
+<h1> New View </h1>
+
+<form action = "/users" method = "POST" accept-charset="UTF-8">
+  <label for="email">Email</label>
+  <input type="email" name="email">
+  <br><br>
+  <label for="username">User Name</label>
+  <input type="text" name="username">
+  <br><br>
+  <label for="password">Password</label>
+  <input type="password" name="password">
+  <br><br>
+  <input type="submit" name="submit" value="submit">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+</form>
