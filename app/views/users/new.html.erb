@@ -15,6 +15,7 @@
 </form>
 -->
 
+<!--
 <%= form_tag('/users') do %>
   <%= label_tag 'email', 'Email: ' %>
   <div><%= email_field_tag 'email', 'email@example.com' %></div>
@@ -30,5 +31,11 @@
 
   <div><%= submit_tag 'Submit' %></div>
 <% end %>
+-->
 
-
+<%= form_for(@user) do |f| %>
+Enter Your Email: <%= f.text_field :email, placeholder: 'example@email.com' %><br /><br />
+Enter Your Username: <%= f.text_field :username %><br /><br />
+Enter Password: <%= f.password_field :password %><br /><br />
+<%= f.submit 'Submit' %>
+<% end %>
