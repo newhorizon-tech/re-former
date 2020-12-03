@@ -1,6 +1,6 @@
 <h1> New View </h1>
 
-<form action = "/users" method = "POST" accept-charset="UTF-8">
+<!--<form action = "/users" method = "POST" accept-charset="UTF-8">
   <label for="email">Email</label>
   <input type="email" name="user[email]">
   <br><br>
@@ -13,3 +13,22 @@
   <input type="submit" name="submit" value="submit">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 </form>
+-->
+
+<%= form_tag('/users') do %>
+  <%= label_tag 'email', 'Email: ' %>
+  <div><%= email_field_tag 'email', 'email@example.com' %></div>
+  <br />
+
+  <%= label_tag 'username', 'Username: ' %>
+  <div><%= text_field_tag 'username' %></div>
+  <br />
+
+  <%= label_tag 'password', 'Password: ' %>
+  <div><%= password_field_tag 'password' %></div>
+  <br />
+
+  <div><%= submit_tag 'Submit' %></div>
+<% end %>
+
+
