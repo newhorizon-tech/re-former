@@ -1,4 +1,4 @@
-<h1> New View </h1>
+<h1> New User </h1>
 
 <!--<form action = "/users" method = "POST" accept-charset="UTF-8">
   <label for="email">Email</label>
@@ -38,4 +38,17 @@ Enter Your Email: <%= f.text_field :email, placeholder: 'example@email.com' %><b
 Enter Your Username: <%= f.text_field :username %><br /><br />
 Enter Password: <%= f.password_field :password %><br /><br />
 <%= f.submit 'Submit' %>
+<% end %>
+
+
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %>:</h2>
+
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
 <% end %>
